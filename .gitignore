@@ -1,0 +1,95 @@
+# Node
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+
+# Build outputs
+dist/
+build/
+out/
+public/build/
+.next/
+.nyc_output/
+lib/
+esm/
+coverage/
+coverage-final.json
+
+# Runtime files
+logs/
+*.log
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
+*.tmp
+
+# Environment
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Misc caches
+.cache/
+.cache-loader/
+.next/cache
+.jest/
+parcel-cache/
+.parcel-cache/
+dist/
+.build/
+*.tsbuildinfo
+
+# Package manager artifacts
+.lock-wscript
+coverage/
+*.tgz
+
+# Mongo / DB
+data/
+data/db/
+dump/
+*.dump
+
+# Uploaded files / user content
+uploads/
+uploads/*
+tmp_uploads/
+
+# Test / reports
+report/
+reports/
+test-output/
+
+# Optional: ignore local secrets or credentials
+*.pem
+*.key
+*.crt
+
+# Keep example config files tracked
+!.env.example
