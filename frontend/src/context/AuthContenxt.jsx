@@ -21,7 +21,7 @@ export const AuthContextProvider = ({childern}) =>{
     console.log('AuthContext state: ', state)
 
     return(
-        <AuthContext.Provider>
+        <AuthContext.Provider value = {{...state, dispatch}}>
             {childern}
         </AuthContext.Provider>
     )
