@@ -12,7 +12,7 @@ const app = express()
 app.use(cors({
   origin: [
     'http://localhost:5173', // Vite dev server
-    'https://your-frontend-url.vercel.app' // Vercel frontend
+    'https://fitnes-app-mern.vercel.app/' // Vercel frontend
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
