@@ -8,6 +8,7 @@ import {formatDistanceToNow} from 'date-fns'
 function WorkoutDetails ({workout}){
     const {dispatch} = useWorkoutContext()
     const { user } = useAuthContext()
+    const API_URL = import.meta.env.VITE_API_URL || ''
 
     const handleClick = async () =>{
 
@@ -15,7 +16,7 @@ function WorkoutDetails ({workout}){
             return
         }
 
-        const response = await await fetch(`/api/workouts/${workout._id}`, {
+        const response = await await fetch(`${API_URL}/api/workouts/${workout._id}`, {
             method: 'Delete',
             headers: {
                 'Authorization': `Bearer ${user.token}`

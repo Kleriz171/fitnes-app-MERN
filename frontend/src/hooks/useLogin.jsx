@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuthContext} from "./useAuthContext"
 
 export const useLogin = () =>{
+    const API_URL = import.meta.env.VITE_API_URL || ''
     const [error, setError]  = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
@@ -10,7 +11,7 @@ export const useLogin = () =>{
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('/api/user/login',
+        const response = await fetch(`${API_URL}/api/user/login`,
             {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},

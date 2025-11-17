@@ -1,13 +1,22 @@
 require('dotenv').config()
-
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 const mongoose = require('mongoose')
 const express = require('express')
-
+const cors = require('cors') 
 
 //express app
 const app = express()
+
+// Enable CORS
+app.use(cors({
+  origin: [
+    'http://localhost:5173', // Vite dev server
+    'https://your-frontend-url.vercel.app' // Vercel frontend
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}))
 
 // middleware
 app.use(express.json())
@@ -18,18 +27,16 @@ app.use((req,res,next) =>{
 
 //routes
 app.use('/api/workouts', workoutRoutes)
-
 app.use('/api/user', userRoutes)
+
 //connect to db 
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
         //listen for request
         app.listen(process.env.PORT, () =>{
-        console.log("connected on db and listening on port ", process.env.PORT)
-})
+            console.log("connected on db and listening on port ", process.env.PORT)
+        })
     })
     .catch((error)=>{
         console.log(error)
     })
-
-

@@ -9,10 +9,11 @@ import WorkoutForm from "../components/workoutForm";
 function Home() {
   const { workouts, dispatch } = useWorkoutContext(); 
   const {user} = useAuthContext()
+  const API_URL = import.meta.env.VITE_API_URL || ''
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts", {
+      const response = await fetch(`${API_URL}/api/workouts`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }

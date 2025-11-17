@@ -84,3 +84,4 @@ test-output/
 
 # Keep example config files tracked
 !.env.example
+.env
