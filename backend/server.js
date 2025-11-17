@@ -9,14 +9,7 @@ const cors = require('cors')
 const app = express()
 
 // Enable CORS
-app.use(cors({
-  origin: [
-    'http://localhost:5173', // Vite dev server
-    'https://fitnes-app-mern.vercel.app/' // Vercel frontend
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}))
+app.use(cors())
 
 // middleware
 app.use(express.json())
